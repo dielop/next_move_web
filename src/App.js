@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Body from './components/bodyHome/Body';
+import BodyUs from './components/bodyUs/BodyUs';
+import BodyService from './components/bodyService/BodyService';
+import BodyCampus from './components/bodyCampus/BodyCampus';
+import BodyContact from './components/bodyContact/BodyContact';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+          <Navbar/>
+
+          <Routes>
+            <Route exact={true} path='/' element={<Body/>}/>
+            <Route exact={true} path='/Nosotros' element={<BodyUs/>}/>
+            <Route exact={true} path='/Servicios' element={<BodyService/>}/>
+            <Route exact={true} path='/Sedes' element={<BodyCampus/>}/>
+            <Route exact={true} path='/Contacto' element={<BodyContact/>}/>
+          </Routes>
+
+          <Footer/>
+      </Router>   
     </div>
   );
 }

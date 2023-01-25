@@ -1,0 +1,23 @@
+.main{
+    width: 100%;
+    position:relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.bodyLeft{
+    display:flex;
+    width: 50%;
+}
+
+.bodyLeft h1{
+    color:white;
+}
+
+.bodyLeft h2{
+    color:white;
+}
+
+.bodyLeft img{
+    width: 500px;
+}
